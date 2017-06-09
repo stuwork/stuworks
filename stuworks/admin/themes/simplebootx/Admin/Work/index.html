@@ -1,0 +1,50 @@
+<admintpl file="header" />
+
+<html>
+<link href="__TMPL__Public/stu_geren/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="__TMPL__Public/stu_geren/css/style.css" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+<div>
+    <img src="__ROOT__/themes/stuweb/Public/assets/images/qiu.jpg">
+</div>
+
+<php>
+    $User = M("tea_upload");
+    $data = $User->order('end_time desc')->select();
+</php>
+
+<php>
+</php>
+
+<div class="wrap">
+    <div id="home_toptip"></div>
+    <div>
+        <span style="font-size: 30px; margin-left: 40px;">课程名字</span>
+        <span style="font-size: 30px; margin-left: 120px;">老师</span>
+        <span style="font-size: 30px; margin-left: 120px;">题目</span>
+        <span style="font-size: 30px; margin-left: 120px;">截至日期</span>
+    </div>
+    <php> for($i = 0; $i <= 10; $i = $i + 2){</php>
+    <h4 class="well">
+        <div style="margin-left: 20px; width: 150px; float: left;"><?=$data[$i]['class_name']?></div>
+        <div style="margin-left: 100px; width: 100px; float: left;"><?=$data[$i]['teacher_id']?></div>
+        <div style="margin-left: 80px; width: 100px; float: left;"><?=$data[$i]['work_name']?></div>
+        <div style="margin-left: 100px; width: 100px; float: left;"><?=$data[$i]['end_time']?></div>
+        <div style="clear: both;"></div>
+    </h4>
+    <div class="home_info"  style="margin-left: 20px; font-size: 20px;">
+        <div style="margin-left: 20px; width: 150px; float: left;"><?=$data[$i + 1]['class_name']?></div>
+        <div style="margin-left: 100px; width: 100px; float: left;"><?=$data[$i + 1]['teacher_id']?></div>
+        <div style="margin-left: 80px; width: 100px; float: left;"><?=$data[$i + 1]['work_name']?></div>
+        <div style="margin-left: 100px; width: 100px; float: left;"><?=$data[$i + 1]['end_time']?></div>
+        <div style="clear: both;"></div>
+    </div>
+    <php>}</php>
+
+</div>
+
+</body>
+</html>

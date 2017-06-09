@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="apple-touch-icon" sizes="76x76" href="__TMPL__Public/works/assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="__TMPL__Public/works/assets/img/favicon.png" />
+    <title></title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- CSS Files -->
+    <link href="__TMPL__Public/works/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="__TMPL__Public/works/assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="__TMPL__Public/works/assets/css/demo.css" rel="stylesheet" />
+    <style>
+
+        #login_click
+        {
+            margin-top:32px; height:40px;
+
+            text-decoration:none;
+            background:#2f435e;
+            color:#f2f2f2;
+
+            padding: 10px 30px 10px 30px;
+            font-size:16px;
+            font-family: 微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif;
+            font-weight:bold;
+            border-radius:3px;
+
+            -webkit-transition:all linear 0.30s;
+            -moz-transition:all linear 0.30s;
+            transition:all linear 0.30s;
+
+        }
+        #login_click a:hover { background:#385f9e; }
+
+    </style>
+
+</head>
+
+<body>
+<div class="image-container set-full-height" style="background-image: url('__TMPL__Public/works/assets/img/paper-2.jpeg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="wizard-container">
+                    <div class="card wizard-card" data-color="green" id="wizard">
+                        <form action="__URL__/works" enctype="multipart/form-data" method="post" >
+                            <div style="margin-left: 130px;">
+                                <h3 class="wizard-title" style="margin-left: 100px;">布置作业</h3>
+                                <p>合适的作业有利于学生更好的掌握上课的知识点</p>
+                            </div>
+                            <div style="float: left; margin-left: 60px; margin-top: 30px;">
+                                <p>课程名字</p>
+                                <input type="text" name="class_name" />
+                            </div>
+                            <div style="float: left; margin-left: 100px; margin-top: 30px;">
+                                <p>作业题目</p>
+                                <input type="text" name="work_name" />
+                            </div>
+                            <div style="float: left; margin-left:60px; margin-top: 30px;">
+                                <p>截至时间</p>
+                                <input type="text" name="end_time" />
+                                <input type="text" name="teacher_id" value="{$admin['user_number']}" style="display: none;">
+                            </div>
+                            <div  style="float: left; margin-left: 100px; margin-top: 60px;">
+                                <input type='file'  name='photo1'>
+                            </div>
+
+
+                            <div style="clear: both;"></div>
+
+                            <div style="margin-left: 8%; margin-top: 30px;">
+                                <p>作业介绍</p>
+                             <input type="text" name="message" style="width: 90%;" />
+                            </div>
+
+                            <div style="margin-top: 20px; margin-left: 250px;">
+                                <input type="submit" id="login_click" value="提交" >
+                            </div>
+
+                        </form>
+                    </div>
+                </div> <!-- wizard container -->
+            </div>
+        </div> <!-- row -->
+    </div>
+</div>
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="__TMPL__Public/works/assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="__TMPL__Public/works/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="__TMPL__Public/works/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+
+<!--  Plugin for the Wizard -->
+<script src="__TMPL__Public/works/assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+<script src="__TMPL__Public/works/assets/js/jquery.validate.min.js" type="text/javascript"></script>
+
+</html>

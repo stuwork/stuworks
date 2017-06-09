@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <tc_include file="Public:head"/>
+    <title>注册界面</title>
+
+    <link href="__TMPL__Public/Wopop_files/style_log.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/Wopop_files/style.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/Wopop_files/userpanel.css">
+    <link rel="stylesheet" type="text/css" href="__TMPL__Public/Wopop_files/jquery.ui.all.css">
+</head>
+
+<body>
+
+<tc_include file="Public:nav"/>
+
+
+
+<!--合作联系标题-->
+<div class="container  container_full title_coloumn">
+    <span class="cn">注 册</span>
+    <span class="en"><img src="__TMPL__Public/assets/images/eq/title_case.png"/></span>
+    <div class="title_coloumn_line"><img src="__TMPL__Public/assets/images/title_tip.gif" width="20" height="31" class="title_img"/></div>
+</div>
+
+<!--登录代码-->
+<div class="login" mycollectionplug="bind">
+    <div class="login_m" style="height: 900px;">
+        <div class="login_logo"><img src="__TMPL__Public/Wopop_files/logo.png" width="196" height="46"></div>
+        <div class="login_boder" style="height: 1000px; background-size: 403px 700px;">
+
+            <div class="login_padding" id="login_model" >
+                <div style="height: 20px;"></div>
+                <h2>账户名称</h2>
+                <label>
+                    <input type="text" id="user_login" class="txt_input txt_input2">
+                </label>
+                <h2>登录邮箱</h2>
+                <label>
+                    <input type="text" id="user_email" class="txt_input txt_input2">
+                </label>
+                <h2>性  别</h2>
+                <label>
+                    <input type="text" id="sex" class="txt_input txt_input2">
+                </label>
+                <h2>手机号</h2>
+                <label>
+                    <input type="text" id="mobile" class="txt_input txt_input2">
+                </label>
+                <h2>密  码</h2>
+                <label>
+                    <input type="password" name="textfield2" id="userpwd" class="txt_input">
+                </label>
+                <h2>重复密码</h2>
+                <label>
+                    <input type="password2" name="textfield2" id="userpwd" class="txt_input">
+                </label>
+
+
+                <div class="rem_sub" style="margin-top: 30px;">
+                    <label>
+                        <input type="submit" class="sub_button" name="button" id="button" value="注  册" style="opacity: 0.7;">
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<tc_include file="Public:footer"/>
+
+</body>
+</html>

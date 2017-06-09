@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <tc_include file="Public:head"/>
+    <title>消息中心</title>
+</head>
+
+<body>
+    <tc_include file="Public:nav"/>
+
+<!--案例展示标题-->
+<div class="container  container_full title_coloumn">
+    <span class="cn">消息中心</span>
+    <span class="en"><img src="__TMPL__Public/assets/images/eq/title_case.png"/></span>
+    <div class="title_coloumn_line"><img src="__TMPL__Public/assets/images/title_tip.gif" width="20" height="31" class="title_img"/></div>
+</div>
+
+    <php>
+        $tag = 'cid:5; field: object_id, term_id, post_title, post_date, post_excerpt; limit: 10; order: post_date DESC;';
+        $where = ['post_status' => 1];
+        $posts = sp_sql_posts($tag, $where);
+    </php>
+
+<div class="cas_n1">
+    <volist name="posts" id = "vo">
+        <div>
+            <li style="border-bottom: 1px solid #ececec; margin-top: 4%; margin-left: 4%;">
+                <a href="{:leuu('Portal/Article/index', ['id'=>$vo['object_id'], 'cid'=>5])}" style="font-size: 16px;">{$vo.post_title}</a>
+            </li>
+        </div>
+    </volist>
+    <volist name="posts" id = "vo">
+        <div>
+            <li style="border-bottom: 1px solid #ececec; margin-top: 4%; margin-left: 4%;">
+                <a href="{:leuu('Portal/Article/index', ['id'=>$vo['object_id'], 'cid'=>5])}" style="font-size: 16px;">{$vo.post_title}</a>
+            </li>
+        </div>
+    </volist>
+</div>
+    <php>
+        $tag = 'cid:6; field: object_id, term_id, post_title, post_date, post_excerpt; limit: 10; order: post_date DESC;';
+        $where = ['post_status' => 1];
+        $posts = sp_sql_posts($tag, $where);
+    </php>
+<div class="cas_n2">
+    <div style="font-size: 20px; margin-left: 5%; margin-top: 5%; color: #0aa4ea;">新闻中心</div>
+    <volist name="posts" id = "vo">
+        <div>
+            <li style="border-bottom: 1px solid #ececec; margin-top: 4%; margin-left: 4%;" class="dd">
+                <a href="{:leuu('Portal/Article/index', ['id'=>$vo['object_id'], 'cid'=>6])}" style="font-size: 16px;">{$vo.post_title}</a>
+            </li>
+        </div>
+    </volist>
+</div>
+    <php>
+        $tag = 'cid:5; field: object_id, term_id, post_title, post_date, post_excerpt; limit: 10; order: post_date DESC;';
+        $where = ['post_status' => 1];
+        $posts = sp_sql_posts($tag, $where);
+    </php>
+<div class="cas_n3">
+    <div style="font-size: 20px; margin-left: 5%; margin-top: 5%; color: #0aa4ea;">校园简介</div>
+    <volist name="posts" id = "vo">
+        <div>
+            <li style="border-bottom: 1px solid #ececec; margin-top: 4%; margin-left: 4%;" class="dd">
+                <a href="{:leuu('Portal/Article/index', ['id'=>$vo['object_id'], 'cid'=>5])}" style="font-size: 16px;">{$vo.post_title}</a>
+            </li>
+        </div>
+    </volist>
+</div>
+<div style="clear: both;"></div>
+
+
+<tc_include file="Public:footer"/>
+
+</body>
+</html>

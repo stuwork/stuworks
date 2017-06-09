@@ -1,0 +1,80 @@
+<admintpl file="header" />
+<!--<style>
+    .home_info li em {
+        float: left;
+        width: 120px;
+        font-style: normal;
+    }
+    li {
+        list-style: none;
+    }
+</style>-->
+<html>
+<link href="__TMPL__Public/stu_geren/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="__TMPL__Public/stu_geren/css/style.css" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+
+<php>
+    $User = M("users"); // 实例化User对象
+    // 查找status值为1name值为think的用户数据
+    $sql='user_login='."'".$admin['user_login']."'";
+    $data = $User->where($sql)->find();
+</php>
+
+
+<div class="banner-info">
+    <div class="col-md-7 header-right">
+        <h1>Hi !</h1>
+        <h6>学生个人信息</h6>
+        <ul class="address">
+
+            <li>
+                <ul class="address-text">
+                    <li><b>学生姓名</b></li>
+                    <li><?=$data['user_login']?></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="address-text">
+                    <li><b>学生学号</b></li>
+                    <li><?=$data['user_number']?></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="address-text">
+                    <li><b>学生班级 </b></li>
+                    <li><?=$data['user_class']?></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="address-text">
+                    <li><b>学生性别 </b></li>
+                    <li><?=$data['sex']?></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="address-text">
+                    <li><b>学生邮箱</b></li>
+                    <li><?=$data['user_email']?></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="address-text">
+                    <li><b>学生电话 </b></li>
+                    <li><?=$data['mobile']?></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    <div class="col-md-5 header-left">
+        <img src="__TMPL__Public/stu_geren/images/img1.jpg" alt="">
+    </div>
+    <div class="clearfix"> </div>
+</div>
+
+</body>
+</html>

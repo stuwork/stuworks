@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <tc_include file="Public:head" />
+    <title>作业提交系统</title>
+</head>
+
+<body>
+	<tc_include file="Public:nav" />
+
+
+    <div class="container  container_full title_coloumn">
+        <span class="cn">首页</span>
+        <span class="en"><img src="__TMPL__Public/assets/images/eq/title_about.png"/></span>
+        <div class="title_coloumn_line"><img src="__TMPL__Public/assets/images/title_tip.gif" width="20" height="31" class="title_img"/></div>
+    </div>
+
+
+    <!--服务内容-->
+    <div class="container container_1000 m_center cf b_70">
+
+        <div class="f_left cell_wrap container_s">
+            <div class="cell_wrap_b">
+                <div class="cell_wrap_container">
+                    <p class="imgwrap_service">
+                    <span>
+                    	<img src="__TMPL__Public/assets/images/dd_f.png" width="109" height="76"/>
+                    </span>
+                        <span>
+                    	<img src="__TMPL__Public/assets/images/dd.png" width="109" height="76"/>
+                    </span>
+                    </p>
+                    <p class="s_title">
+                        <span class="t1">学生作业管理系统</span>
+                        <span class="t2">学生作业管理系统</span>
+                    </p>
+                    <div class="s_content">随着互联网技术的迅猛发展，网络给人们带来了很多便利，但是在目前的高校教学系统中，学生提交作业和教师批改作业都得靠纸质交流，或者是用单一的上传，拷贝等方法交流。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f_right cell_wrap container_s">
+            <div class="cell_wrap_b">
+                <div class="cell_wrap_container">
+                    <p class="imgwrap_service">
+                        <span><img src="__TMPL__Public/assets/images/dyy_f.png" width="61" height="79"/></span>
+                        <span><img src="__TMPL__Public/assets/images/dyy.png" width="61" height="79"/></span>
+                    </p>
+                    <p class="s_title">
+                        <span class="t1">网上管理作业</span>
+                        <span class="t2">网上管理作业</span>
+                    </p>
+                    <div class="s_content">网络化教育代表了教育改革的一个发展方向,已经成为现代教育的一个特征,并对教育的发展形成新的推动力。通过Internet来实现网上作业提交，是现代教育技术的一个具体实现，具有很重要的现实意义。</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--服务流程标题-->
+    <div class="container  container_full title_coloumn">
+        <span class="cn">服务流程</span>
+        <span class="en"><img src="__TMPL__Public/assets/images/eq/title_liucheng.png"/></span>
+        <div class="title_coloumn_line"><img src="__TMPL__Public/assets/images/title_tip.gif" width="20" height="31"
+                                             class="title_img"/></div>
+    </div>
+
+    <!--流程内容-->
+    <div class="container container_859 m_center cf b_100">
+        <ul class="liucheng">
+            <li class="liucheng_item js_liucheng_item">
+                <p class="icon_liucheng icon_liucheng_1"></p>
+                <span class="bg_l1 js_bg_l1"></span><span class="bg_l2 js_bg_l2"></span>
+                <p class="liu_txt">需求分析</p>
+            </li>
+            <li class="liucheng_item js_liucheng_item">
+                <p class="icon_liucheng icon_liucheng_2"></p>
+                <span class="bg_l1 js_bg_l1"></span><span class="bg_l2 js_bg_l2"></span>
+                <p class="liu_txt">功能规划</p>
+            </li>
+            <li class="liucheng_item js_liucheng_item">
+                <p class="icon_liucheng icon_liucheng_3"></p>
+                <span class="bg_l1 js_bg_l1"></span><span class="bg_l2 js_bg_l2"></span>
+                <p class="liu_txt">视觉/程序开发</p>
+            </li>
+            <li class="liucheng_item js_liucheng_item">
+                <p class="icon_liucheng icon_liucheng_4"></p>
+                <span class="bg_l1 js_bg_l1"></span><span class="bg_l2 js_bg_l2"></span>
+                <p class="liu_txt">推广运营</p>
+            </li>
+        </ul>
+        <img class="liucheng_img" src="__TMPL__Public/assets/images/bg_liucheng.png" width="859" height="91"/>
+    </div>
+
+    <div style="height: 800px; background-color: white;">
+        <php>
+            $tag = 'cid:4; field: object_id, term_id, post_title, post_content, smeta; limit: 6; order: post_date asc;';
+            $where = ['post_status' => 1];
+            $posts = sp_sql_posts($tag, $where);
+        </php>
+        <div class="zuoyong1">
+            <?php
+                $img_path = json_decode($posts[0]['smeta'], true);
+            ?>
+            <div style="float: left; width: 130px;">
+                <img src="{$img_path.thumb|sp_get_asset_upload_path}" style="margin-left: 4%; margin-top: 2%;">
+            </div>
+            <div style="float: left; width: 60%;">
+                <div style="font-size: 30px;">{$posts[0].post_title}</div>
+                <div style="font-size: 20px;">{$posts[0].post_content}</span></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="zuoyong2">
+            <?php
+                $img_path = json_decode($posts[1]['smeta'], true);
+            ?>
+            <div style="float: left; width: 130px;">
+                <img src="{$img_path.thumb|sp_get_asset_upload_path}" style="margin-left: 4%; margin-top: 2%;">
+            </div>
+            <div style="float: left; width: 60%;">
+                <div style="font-size: 30px;">{$posts[1].post_title}</div>
+                <div style="font-size: 20px;">{$posts[1].post_content}</span></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="zuoyong1">
+            <?php
+                $img_path = json_decode($posts[2]['smeta'], true);
+            ?>
+            <div style="float: left; width: 130px;">
+                <img src="{$img_path.thumb|sp_get_asset_upload_path}" style="margin-left: 4%; margin-top: 2%;">
+            </div>
+            <div style="float: left; width: 60%;">
+                <div style="font-size: 30px;">{$posts[2].post_title}</div>
+                <div style="font-size: 20px;">{$posts[2].post_content}</span></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="zuoyong2">
+            <?php
+                $img_path = json_decode($posts[3]['smeta'], true);
+            ?>
+            <div style="float: left; width: 130px;">
+                <img src="{$img_path.thumb|sp_get_asset_upload_path}" style="margin-left: 4%; margin-top: 2%;">
+            </div>
+            <div style="float: left; width: 60%;">
+                <div style="font-size: 30px;">{$posts[3].post_title}</div>
+                <div style="font-size: 20px;">{$posts[3].post_content}</span></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="zuoyong1">
+            <?php
+                $img_path = json_decode($posts[4]['smeta'], true);
+            ?>
+            <div style="float: left; width: 130px;">
+                <img src="{$img_path.thumb|sp_get_asset_upload_path}" style="margin-left: 4%; margin-top: 2%;">
+            </div>
+            <div style="float: left; width: 60%;">
+                <div style="font-size: 30px;">{$posts[4].post_title}</div>
+                <div style="font-size: 20px;">{$posts[4].post_content}</span></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="zuoyong2">
+            <?php
+                $img_path = json_decode($posts[5]['smeta'], true);
+            ?>
+            <div style="float: left; width: 130px;">
+                <img src="{$img_path.thumb|sp_get_asset_upload_path}" style="margin-left: 4%; margin-top: 2%;">
+            </div>
+            <div style="float: left; width: 60%;">
+                <div style="font-size: 30px;">{$posts[5].post_title}</div>
+                <div style="font-size: 20px;">{$posts[5].post_content}</span></div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <!--新闻中心 开始-->
+
+    <div style="font-size: 35px; margin-top: 4%; margin-left: 45%; margin-bottom: 4%;">新闻中心</div>
+<div>
+    <php>
+        $tag = 'cid:5; field: object_id, term_id, post_title, post_date, post_excerpt; limit: 10; order: post_date DESC;';
+        $where = ['post_status' => 1];
+        $posts = sp_sql_posts($tag, $where);
+    </php>
+
+
+    <div class="xianshi1">
+        <div style="font-size: 20px; margin-left: 4%; margin-top: 2%;">
+            通知公告
+            <em style="font-size: 20px;">/</em>
+            <span style="font-size: 15px;">NOTICE</span>
+        </div>
+        <volist name="posts" id = "vo">
+            <div>
+                <li style="border-bottom: 1px solid #ececec; margin-top: 4%; margin-left: 4%;">
+                    <a href="{:leuu('Portal/Article/index', ['id'=>$vo['object_id'], 'cid'=>5])}">{$vo.post_title}</a>
+                </li>
+            </div>
+        </volist>
+    </div>
+
+    <php>
+        $tag = 'cid:6; field: object_id, term_id, post_title, post_date, post_excerpt; limit: 10; order: post_date DESC;';
+        $where = ['post_status' => 1];
+        $posts = sp_sql_posts($tag, $where);
+    </php>
+
+    <div class="xianshi2">
+        <div style="font-size: 20px; margin-left: 4%; margin-top: 2%;">
+            教学动态
+            <em style="font-size: 20px;">/</em>
+            <span style="font-size: 15px;">TREND</span>
+        </div>
+        <volist name="posts" id = "vo">
+            <div>
+                <li style="border-bottom: 1px solid #ececec; margin-top: 4%; margin-left: 4%;">
+                    <a href="{:leuu('Portal/Article/index', ['id'=>$vo['object_id'], 'cid'=>6])}">{$vo.post_title}</a>
+                </li>
+            </div>
+        </volist>
+    </div>
+    <!--新闻中心 结束-->
+</div>
+
+
+<div style="clear: both;"></div>
+
+
+<tc_include file="Public:footer"/>
+
+</body>
+</html>

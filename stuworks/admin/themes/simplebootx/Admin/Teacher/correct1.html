@@ -1,0 +1,61 @@
+<admintpl file="header" />
+
+<html>
+<link href="__TMPL__Public/stu_geren/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="__TMPL__Public/stu_geren/css/style.css" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+<div>
+	<img src="__ROOT__/themes/stuweb/Public/assets/images/qiu.jpg">
+</div>
+
+<php>
+	$User = M("users");
+	$data = $User->where("user_id='1'")->select();
+</php>
+<php> for($i = 0; $i <= 100; $i = $i + 1){
+	if($data[$i]['user_login']=='') break;
+</php>
+			<div>
+				<php>
+					$flag=0;
+					$student_id = $data[$i]['id'];
+					$sql="timu_id=".$timu_id." and student_id = "."'".$data[$i]['user_number']."'";
+					$Panduan = M("upload");
+					$data1 = $Panduan->where($sql)->select();
+					if($data1[0]['student_id'] != '') $flag = 1;
+					if($flag==1){
+				</php>
+				<div>
+					<div class="wrap">
+						<h4 class="well">
+							<div style="float: left;">
+								<span style="width: 200px;"><?=$data[$i]['user_login']?></span>
+								<span style="width: 200px; margin-left: 100px;"><?=$data[$i]['user_number']?></span>
+								<span style="width: 200px; margin-left: 100px;"><?=$data[$i]['user_class']?></span>
+							</div>
+							<div style="clear: both;"></div>
+							<div>
+								<form action="{:leuu('Teacher/correct', ['flag'=>2])}" enctype="multipart/form-data" method="post" >
+									<input type="text" name="id" value="<?=$data1[0]['id']?>" style="display: none;" />
+									作业下载：
+									<input type="submit" value="下载" style="margin-left: 3%; margin-top: 2%; font-size: 15px; width: 100px; height: 40px;" >
+								</form>
+								<form action="{:leuu('Teacher/correct', ['flag'=>3])}" enctype="multipart/form-data" method="post" >
+									成绩：
+									<input type="text" name="score" value="" style="height: 40px; width: 10%;" />
+									<input type="submit" value="提交" style="margin-left: 30px; margin-bottom: 20px; font-size: 15px; width: 100px; height: 40px;" >
+								</form>
+							</div>
+
+						</h4>
+					</div>
+				</div>
+				<php>}</php>
+			</div>
+<php>}</php>
+
+</body>
+</html>

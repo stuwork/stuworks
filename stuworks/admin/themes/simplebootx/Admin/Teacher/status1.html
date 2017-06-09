@@ -1,0 +1,54 @@
+<admintpl file="header" />
+
+<html>
+<link href="__TMPL__Public/stu_geren/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="__TMPL__Public/stu_geren/css/style.css" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+<div>
+	<img src="__ROOT__/themes/stuweb/Public/assets/images/qiu.jpg">
+</div>
+
+<php>
+	$User = M("users");
+	$data = $User->where("user_id='1'")->select();
+</php>
+<php> for($i = 0; $i <= 100; $i = $i + 1){
+	if($data[$i]['user_login']=='') break;
+</php>
+	<div class="wrap" style="padding-top: 2%; padding-bottom: 2%;">
+		<h4 class="well">
+			<div style="float: left;">
+				<span style="width: 200px;"><?=$data[$i]['user_login']?></span>
+				<span style="width: 200px; margin-left: 100px;"><?=$data[$i]['user_number']?></span>
+				<span style="width: 200px; margin-left: 100px;"><?=$data[$i]['user_class']?></span>
+			</div>
+			<div style="float: right; margin-right: 10%;">
+				<php>
+					$flag=0;
+					$student_id = $data[$i]['id'];
+					$sql="timu_id=".$timu_id." and student_id = "."'".$data[$i]['user_number']."'";
+					$Panduan = M("upload");
+					$data1 = $Panduan->where($sql)->select();
+					if($data1[0]['student_id'] != '') $flag = 1;
+					if($flag==1){
+				</php>
+				<div style="margin-top: 5%; margin-left: 50%; color: lime;">
+					已交
+				</div>
+				<php>}else{</php>
+				<div style="margin-top: 5%; margin-left: 50%; color:red;">
+					未做
+				</div>
+				<php>}</php>
+			</div>
+			<div style="clear: both;"></div>
+		</h4>
+	</div>
+
+<php>}</php>
+
+</body>
+</html>

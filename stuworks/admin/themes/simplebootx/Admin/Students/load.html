@@ -1,0 +1,132 @@
+<admintpl file="header" />
+
+<html>
+<link href="__TMPL__Public/stu_geren/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="__TMPL__Public/stu_geren/css/style.css" rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+<div>
+    <img src="__ROOT__/themes/stuweb/Public/assets/images/qiu.jpg">
+</div>
+
+<php>
+    $User = M("tea_upload");
+    $where1="teacher_id="."'".$user_number."'";
+    $data = $User->where($where1)->select();
+</php>
+
+<php> for($i = 0; $i <= 100; $i = $i + 3){
+    if($data[$i]['class_name']=='') break;
+</php>
+
+<div class="home_info">
+    <h4 class="well">
+    <div style="float: left;">
+        <img src="__ROOT__/themes/stuweb/Public/assets/images/img/7.jpg" style="height: 200px; width: 300px;">
+    </div>
+    <div style="margin-left: 30%;">
+        <ul id="thinkcmf_notices" >
+            <p>课程：<span style="color: #0aa4ea;"><?=$data[$i]['class_name']?></span></p>
+            <p>题目：<?=$data[$i]['work_name']?></p>
+            <p>截至时间：<?=$data[$i]['end_time']?></p>
+            <p>老师提醒：<span style="color: #d58512;"><?=$data[$i]['message']?></span></p>
+        </ul>
+    </div>
+    <form action="{:leuu('Students/upwork', ['flag'=>1])}" enctype="multipart/form-data" method="post" >
+        <div style="margin-left: 30%; margin-top: 3%;">
+            学生作业评价
+            <input type="text" name="message" value="" style="width: 80%; height: 30px;" />
+        </div>
+        <div style="margin-left: 32%; margin-top: 3%;">
+            <input type='file'  name='photo1' style="height: 40px;">
+        </div>
+        <div style="margin-left: 80%; margin-top: 4%;">
+            <input type="text" name="student_id" value="<?=$admin['user_number']?>" style="display: none;" />
+            <input type="text" name="teacher_id" value="<?=$data[$i]['teacher_id']?>" style="display: none;" />
+            <input type="text" name="class_name" value="<?=$data[$i]['class_name']?>" style="display: none;" />
+            <input type="text" name="work_name" value="<?=$data[$i]['work_name']?>" style="display: none;" />
+            <input type="text" name="timu_id" value="<?=$data[$i]['id']?>" style="display: none;" />
+            <input type="submit" value="作业上传" style="margin-left: 30px; font-size: 15px; width: 100px; height: 40px;" >
+        </div>
+    </form>
+    <div style="clear:both;"></div>
+    </h4>
+</div>
+<php>if($data[$i+1]['class_name']=='') break;</php>
+<div class="home_info">
+    <h4 class="well">
+        <div style="float: left;">
+            <img src="__ROOT__/themes/stuweb/Public/assets/images/img/8.jpg" style="height: 200px; width: 300px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <ul id="thinkcmf_notices" >
+                <p>课程：<span style="color: #0aa4ea;"><?=$data[$i+1]['class_name']?></span></p>
+                <p>题目：<?=$data[$i+1]['work_name']?></p>
+                <p>截至时间：<?=$data[$i+1]['end_time']?></p>
+                <p>老师提醒：<span style="color: #d58512;"><?=$data[$i+1]['message']?></span></p>
+            </ul>
+        </div>
+        <form action="{:leuu('Students/upwork', ['flag'=>1])}" enctype="multipart/form-data" method="post" >
+            <div style="margin-left: 30%; margin-top: 3%;">
+                学生作业评价
+                <input type="text" name="message" value="" style="width: 80%; height: 30px;" />
+            </div>
+            <div style="margin-left: 32%; margin-top: 3%;">
+                <input type='file'  name='photo1' style="height: 40px;">
+            </div>
+            <div style="margin-left: 80%; margin-top: 4%;">
+                <input type="text" name="student_id" value="<?=$admin['user_number']?>" style="display: none;" />
+                <input type="text" name="teacher_id" value="<?=$data[$i+1]['teacher_id']?>" style="display: none;" />
+                <input type="text" name="class_name" value="<?=$data[$i+1]['class_name']?>" style="display: none;" />
+                <input type="text" name="work_name" value="<?=$data[$i+1]['work_name']?>" style="display: none;" />
+                <input type="text" name="timu_id" value="<?=$data[$i]['id']?>" style="display: none;" />
+                <input type="submit" value="作业上传" style="margin-left: 30px; font-size: 15px; width: 100px; height: 40px;" >
+            </div>
+        </form>
+        <div style="clear:both;"></div>
+    </h4>
+</div>
+<php>if($data[$i+2]['class_name']=='') break;</php>
+<div class="home_info">
+    <h4 class="well">
+        <div style="float: left;">
+            <img src="__ROOT__/themes/stuweb/Public/assets/images/img/9.jpg" style="height: 200px; width: 300px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <ul id="thinkcmf_notices" >
+                <p>课程：<span style="color: #0aa4ea;"><?=$data[$i+2]['class_name']?></span></p>
+                <p>题目：<?=$data[$i+2]['work_name']?></p>
+                <p>截至时间：<?=$data[$i+2]['end_time']?></p>
+                <p>老师提醒：<span style="color: #d58512;"><?=$data[$i+2]['message']?></span></p>
+            </ul>
+        </div>
+        <form action="{:leuu('Students/upwork', ['flag'=>1])}" enctype="multipart/form-data" method="post" >
+            <div style="margin-left: 30%; margin-top: 3%;">
+                学生作业评价
+                <input type="text" name="message" value="" style="width: 80%; height: 30px;" />
+            </div>
+            <div style="margin-left: 32%; margin-top: 3%;">
+                <input type='file'  name='photo1' style="height: 40px;">
+            </div>
+            <div style="margin-left: 80%; margin-top: 4%;">
+                <input type="text" name="student_id" value="<?=$admin['user_number']?>" style="display: none;" />
+                <input type="text" name="teacher_id" value="<?=$data[$i+2]['teacher_id']?>" style="display: none;" />
+                <input type="text" name="class_name" value="<?=$data[$i+2]['class_name']?>" style="display: none;" />
+                <input type="text" name="work_name" value="<?=$data[$i+2]['work_name']?>" style="display: none;" />
+                <input type="text" name="timu_id" value="<?=$data[$i]['id']?>" style="display: none;" />
+                <input type="submit" value="作业上传" style="margin-left: 30px; font-size: 15px; width: 100px; height: 40px;" >
+            </div>
+        </form>
+        <div style="clear:both;"></div>
+    </h4>
+</div>
+
+<php>}</php>
+
+
+</div>
+
+</body>
+</html>

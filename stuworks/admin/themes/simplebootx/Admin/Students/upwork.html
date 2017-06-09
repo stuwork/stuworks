@@ -1,0 +1,118 @@
+<admintpl file="header" />
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <img src="__ROOT__/themes/stuweb/Public/assets/images/qiu.jpg">
+</div>
+
+<php>
+    $User = M("users");
+    $data = $User->where("user_id='2'")->select();
+</php>
+
+<php>
+    for($i = 0; $i <= 100; $i = $i + 4){
+    if($data[$i]['user_login']=='') break;
+</php>
+<div class="home_info" style="float: left; width: 45%; margin-left: 2%;">
+    <h4 class="well">
+        <div style="float: left;">
+            <img src="__ROOT__/themes/stuweb/Public/assets/images/work/1.jpg" style="height: 150px; width: 200px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <ul>
+                <p>课程：<span style="color: #0aa4ea;"><?=$data[$i]['user_login']?></span></p>
+                <p>题目：<?=$data[$i]['teacher_class']?></p>
+                <p>截至时间：<?=$data[$i]['user_email']?></p>
+                <p>老师提醒：<span style="color: #d58512;"><?=$data[$i]['mobile']?></span></p>
+            </ul>
+        </div>
+        <div style="margin-left: 80%; margin-top: 4%;">
+            <form action="{:leuu('Students/upwork', ['flag'=>2])}" enctype="multipart/form-data" method="post" >
+                <input type="text" name="user_number" value="<?=$data[$i]['user_number']?>" style="display: none;" />
+                <input type="submit" value="查看作业" style="margin-left: 10%; font-size: 15px;" >
+            </form>
+        </div>
+        <div style="clear:both;"></div>
+    </h4>
+</div>
+<php>if($data[$i+1]['user_login']=='') break;</php>
+<div class="home_info" style="float: left; width: 45%; margin-left: 2%;">
+    <h4 class="well">
+        <div style="float: left;">
+            <img src="__ROOT__/themes/stuweb/Public/assets/images/work/2.jpg" style="height: 150px; width: 200px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <ul>
+                <p>课程：<span style="color: #0aa4ea;"><?=$data[$i+1]['user_login']?></span></p>
+                <p>题目：<?=$data[$i+1]['teacher_class']?></p>
+                <p>截至时间：<?=$data[$i+1]['user_email']?></p>
+                <p>老师提醒：<span style="color: #d58512;"><?=$data[$i+1]['mobile']?></span></p>
+            </ul>
+        </div>
+        <div style="margin-left: 80%; margin-top: 4%;">
+            <form action="{:leuu('Students/upwork', ['flag'=>2])}" enctype="multipart/form-data" method="post" >
+                <input type="text" name="user_number" value="<?=$data[$i+1]['user_number']?>" style="display: none;" />
+                <input type="submit" value="查看作业" style="margin-left: 10%; font-size: 15px;" >
+            </form>
+        </div>
+        <div style="clear:both;"></div>
+    </h4>
+</div>
+<php>if($data[$i+2]['user_login']=='') break;</php>
+<div class="home_info" style="float: left; width: 45%; margin-left: 2%;">
+    <h4 class="well">
+        <div style="float: left;">
+            <img src="__ROOT__/themes/stuweb/Public/assets/images/work/3.jpg" style="height: 150px; width: 200px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <ul>
+                <p>课程：<span style="color: #0aa4ea;"><?=$data[$i+2]['user_login']?></span></p>
+                <p>题目：<?=$data[$i+2]['teacher_class']?></p>
+                <p>截至时间：<?=$data[$i+2]['user_email']?></p>
+                <p>老师提醒：<span style="color: #d58512;"><?=$data[$i+2]['mobile']?></span></p>
+            </ul>
+        </div>
+        <div style="margin-left: 80%; margin-top: 4%;">
+            <form action="{:leuu('Students/upwork', ['flag'=>2])}" enctype="multipart/form-data" method="post" >
+                <input type="text" name="user_number" value="<?=$data[$i+2]['user_number']?>" style="display: none;" />
+                <input type="submit" value="查看作业" style="margin-left: 10%; font-size: 15px;" >
+            </form>
+        </div>
+        <div style="clear:both;"></div>
+    </h4>
+</div>
+<php>if($data[$i+3]['user_login']=='') break;</php>
+<div class="home_info" style="float: left; width: 45%; margin-left: 2%;">
+    <h4 class="well">
+        <div style="float: left;">
+            <img src="__ROOT__/themes/stuweb/Public/assets/images/work/4.jpg" style="height: 150px; width: 200px;">
+        </div>
+        <div style="margin-left: 30%;">
+            <ul>
+                <p>课程：<span style="color: #0aa4ea;"><?=$data[$i+3]['user_login']?></span></p>
+                <p>题目：<?=$data[$i+3]['teacher_class']?></p>
+                <p>截至时间：<?=$data[$i+3]['user_email']?></p>
+                <p>老师提醒：<span style="color: #d58512;"><?=$data[$i+3]['mobile']?></span></p>
+            </ul>
+        </div>
+        <div style="margin-left: 80%; margin-top: 4%;">
+            <form action="{:leuu('Students/upwork', ['flag'=>2])}" enctype="multipart/form-data" method="post" >
+                <input type="text" name="user_number" value="<?=$data[$i+3]['user_number']?>" style="display: none;" />
+                <input type="submit" value="查看作业" style="margin-left: 10%; font-size: 15px;" >
+            </form>
+        </div>
+        <div style="clear:both;"></div>
+    </h4>
+</div>
+
+<php>
+    }
+</php>
+
+</body>
+</html>

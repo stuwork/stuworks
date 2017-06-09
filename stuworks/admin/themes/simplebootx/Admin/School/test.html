@@ -1,0 +1,45 @@
+<admintpl file="header" />
+<style>
+    .home_info li em {
+        float: left;
+        width: 120px;
+        font-style: normal;
+    }
+    li {
+        list-style: none;
+    }
+    .blacktab {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 5px auto;
+        border: 1px solid #000;
+    }
+    .blacktab th, .blacktab td {
+        border: 1px solid #000;
+        color: #000;
+    }
+    .blacktab th, .blacktab td {
+        padding: 1em 2em;
+        vertical-align: middle;
+    }
+
+</style>
+</head>
+<body>
+
+<div>
+    <img src="__ROOT__/themes/stuweb/Public/assets/images/qiu.jpg">
+</div>
+
+<php>
+    $User = M("posts");
+    $data = $User->where('id=23')->find();
+</php>
+
+<?=$data['post_content']?>
+
+</div>
+<script src="__PUBLIC__/js/common.js"></script>
+
+</body>
+</html>
