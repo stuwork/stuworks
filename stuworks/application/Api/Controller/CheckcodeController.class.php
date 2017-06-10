@@ -28,6 +28,85 @@ class CheckcodeController extends Controller {
     	if(isset($_GET['use_noise'])){
     		$use_noise= intval($_GET['use_noise']);
     	}
+$code_set="";
+    	if(!empty($_GET['charset'])){
+    	    $mletters=str_split($_GET['charset']);
+    	    $mletters=array_unique($mletters);
+    	    if(count($mletters)>5){
+    	        $code_set= trim($_GET['charset']);
+    	    }
+    	}
+    	$use_noise=1;
+    	if(isset($_GET['use_noise'])){
+    		$use_noise= intval($_GET['use_noise']);
+    	}
+    	
+$code_set="";
+    	if(!empty($_GET['charset'])){
+    	    $mletters=str_split($_GET['charset']);
+    	    $mletters=array_unique($mletters);
+    	    if(count($mletters)>5){
+    	        $code_set= trim($_GET['charset']);
+    	    }
+    	}
+    	$use_noise=1;
+    	if(isset($_GET['use_noise'])){
+    		$use_noise= intval($_GET['use_noise']);
+    	}
+    	
+$code_set="";
+    	if(!empty($_GET['charset'])){
+    	    $mletters=str_split($_GET['charset']);
+    	    $mletters=array_unique($mletters);
+    	    if(count($mletters)>5){
+    	        $code_set= trim($_GET['charset']);
+    	    }
+    	}
+    	$use_noise=1;
+    	if(isset($_GET['use_noise'])){
+    		$use_noise= intval($_GET['use_noise']);
+    	}
+    	
+$code_set="";
+    	if(!empty($_GET['charset'])){
+    	    $mletters=str_split($_GET['charset']);
+    	    $mletters=array_unique($mletters);
+    	    if(count($mletters)>5){
+    	        $code_set= trim($_GET['charset']);
+    	    }
+    	}
+    	$use_noise=1;
+    	if(isset($_GET['use_noise'])){
+    		$use_noise= intval($_GET['use_noise']);
+    	}
+    	
+$code_set="";
+    	if(!empty($_GET['charset'])){
+    	    $mletters=str_split($_GET['charset']);
+    	    $mletters=array_unique($mletters);
+    	    if(count($mletters)>5){
+    	        $code_set= trim($_GET['charset']);
+    	    }
+    	}
+    	$use_noise=1;
+    	if(isset($_GET['use_noise'])){
+    		$use_noise= intval($_GET['use_noise']);
+    	}
+    	
+$code_set="";
+    	if(!empty($_GET['charset'])){
+    	    $mletters=str_split($_GET['charset']);
+    	    $mletters=array_unique($mletters);
+    	    if(count($mletters)>5){
+    	        $code_set= trim($_GET['charset']);
+    	    }
+    	}
+    	$use_noise=1;
+    	if(isset($_GET['use_noise'])){
+    		$use_noise= intval($_GET['use_noise']);
+    	}
+    	
+
     	
     	$use_curve=1;
     	if(isset($_GET['use_curve'])){
